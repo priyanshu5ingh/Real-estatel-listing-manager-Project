@@ -35,9 +35,9 @@
 }
 
 .value-feature {
-  background: #f9f9f9;
+  background: #141313;
   border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(5, 5, 5, 0.06);
   padding: 1.5rem;
   min-width: 250px;
   max-width: 320px;
