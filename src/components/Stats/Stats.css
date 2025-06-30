@@ -1,0 +1,35 @@
+.stats-wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 2rem 0;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  min-width: 180px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1f3e72;
+  display: block;
+}
+
+.stat-label {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  display: block;
+} 

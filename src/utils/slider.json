@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Aliva Priva Jardin",
+    "price": "₹47,04,300",
+    "detail": "Sector 62, Noida, Uttar Pradesh, India",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "name": "Asatti Garden City",
+    "price": "₹66,35,300",
+    "detail": "Whitefield, Bengaluru, Karnataka, India",
+    "image": "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "name": "Citralan Puri Serang",
+    "price": "₹35,85,300",
+    "detail": "Gachibowli, Hyderabad, Telangana, India",
+    "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "name": "Value Residency",
+    "price": "₹52,00,000",
+    "detail": "Kondapur, Hyderabad, Telangana, India",
+    "image": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "name": "Premium Residency",
+    "price": "₹75,00,000",
+    "detail": "Powai, Mumbai, Maharashtra, India",
+    "image": "https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "name": "Hero Residency",
+    "price": "₹60,00,000",
+    "detail": "HSR Layout, Bengaluru, Karnataka, India",
+    "image": "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80"
+  }
+]

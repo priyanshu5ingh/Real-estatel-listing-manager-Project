@@ -1,0 +1,36 @@
+.companies-wrapper {
+  width: 100%;
+  background: #f8f8f8;
+  padding: 2.5rem 0 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companies-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.companies-container img {
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.companies-container img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .companies-container {
+    gap: 2rem;
+  }
+} 

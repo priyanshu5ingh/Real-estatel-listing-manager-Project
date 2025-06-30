@@ -1,0 +1,119 @@
+.residencies-wrapper {
+  width: 100%;
+  background: #f9f9f9;
+  padding: 3rem 0;
+}
+
+.residencies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.residencies-container h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.residencies-headings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  gap: 0.3rem;
+}
+
+.residencies-best {
+  color: orange;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.residencies-title {
+  color: #1f3e72;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4066ff;
+  background: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #4066ff;
+  color: #fff;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.2rem;
+}
+
+.residency-card {
+  margin-bottom: 2rem;
+  width: 300px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.residency-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.residency-img {
+  width: 100%;
+  height: 180px;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.residency-price {
+  color: #4066ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .residency-card {
+    width: 90vw;
+    min-width: 220px;
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .residency-card {
+    width: 98vw;
+    min-width: 180px;
+    max-width: 99vw;
+    padding: 1rem;
+  }
+  .residency-img {
+    height: 120px;
+  }
+} 

@@ -1,0 +1,31 @@
+.about-wrapper {
+  min-height: 100vh;
+  background: #181818;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glassy-btn {
+  background: rgba(255,255,255,0.85);
+  color: #232323;
+  border: 1.5px solid #fff;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #fff8, 0 0 0 #4066ff00;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  backdrop-filter: blur(8px);
+  margin-top: 2rem;
+}
+.glassy-btn:hover {
+  background: #fff;
+  color: #4066ff;
+  box-shadow: 0 4px 24px #4066ff55, 0 0 16px #ff922d55;
+  border: 1.5px solid #4066ff;
+  transform: scale(1.06);
+} 
