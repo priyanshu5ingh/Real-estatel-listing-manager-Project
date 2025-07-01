@@ -17,6 +17,55 @@ This is a modern web app for managing and browsing real estate listings, designe
 - Made everything responsive and visually appealing, with glassmorphism, glowing effects, and smooth animations.
 - All content and data is localized for India.
 
+## New: Authentication (Login/Signup)
+
+- Added Firebase authentication setup (see `src/utils/firebase.js`).
+- Created Login and Signup pages for users to securely access the platform.
+- All authentication UI is localized for India.
+- The header now shows Login/Signup links if you are not logged in, and a Logout button if you are logged in (with glowing effects).
+- Logging out will redirect you to the login page.
+
+### How to set up authentication
+1. Create a Firebase project at https://console.firebase.google.com/.
+2. Enable Email/Password authentication in the Firebase console.
+3. Copy your Firebase config values and replace the placeholders in `src/utils/firebase.js`.
+4. You can now sign up and log in with email and password.
+
+## Updates (Today)
+
+- Redesigned Login and Signup pages to a modern, clean, card-based layout with a left illustration and right form.
+- Login and Signup pages are now visually consistent, responsive, and professional.
+- Signup page now only asks for Email, Password, and Confirm Password (no full name).
+- On successful signup, users are redirected to the Login page with a green success message: "Your account is created, please log in now."
+- Removed unused fields and old social login options (like Apple).
+- Improved background: solid black with a modern white glow in the corner.
+- All error and success messages are clear and user-friendly.
+- **Note:** There is no backend yet. The login and signup pages are UI only and not functional.
+
+## How to Use (Authentication)
+
+- **Note:** The authentication pages are currently UI only and do not actually create or log in users. Backend integration will be added in the future.
+
+1. **Run the app locally:**
+   - `npm install` (if not already done)
+   - `npm run dev`
+2. **Sign up:**
+   - Go to the Signup page.
+   - Enter your email, password, and confirm password.
+   - Click "Create Account".
+   - You will be redirected to the Login page with a success message.
+3. **Log in:**
+   - Enter your email and password on the Login page.
+   - Click "Login" to access the app.
+
+---
+
+**More features and improvements will be added tomorrow.**
+
+## Next Step
+
+- Push all changes to git to save your progress.
+
 ## Tech Stack Used
 
 - **React** (with JSX)

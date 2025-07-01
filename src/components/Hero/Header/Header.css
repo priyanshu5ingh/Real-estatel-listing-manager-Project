@@ -73,6 +73,26 @@
   background: #2949c6;
 }
 
+.logout-btn {
+  background: #ff922d;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #ff922d55, 0 0 0 #4066ff00;
+}
+
+.logout-btn:hover {
+  background: #4066ff;
+  color: #fff;
+  box-shadow: 0 4px 24px #4066ff55, 0 0 16px #ff922d55;
+}
+
 @media (max-width: 900px) {
   .header-container {
     padding: 0 1rem;
