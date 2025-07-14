@@ -102,3 +102,37 @@ You can deploy this app to any static hosting service (like Vercel, Netlify, or 
 ---
 
 Feel free to customize and expand this project as you like! 
+
+## 🔐 Authentication & Backend Integration (2024 Update)
+
+- **Authentication:**
+  - Login and Signup use Firebase Authentication (Email/Password).
+  - The frontend manages user sessions with Firebase.
+- **Backend (Node.js/Express/MongoDB):**
+  - All property CRUD (add, update, delete, etc.) is handled by the backend API.
+  - Protected routes require authentication.
+  - The frontend sends the Firebase ID token in the `Authorization` header (`Bearer <token>`) for protected requests.
+  - The backend verifies the token using the Firebase Admin SDK.
+
+### How it works
+1. **User signs up or logs in via Firebase (UI unchanged).**
+2. **When adding a property (or any protected action):**
+   - The frontend gets the current user’s Firebase ID token.
+   - The token is sent to the backend in the `Authorization` header.
+   - The backend verifies the token and allows/denies the request.
+
+### How to Test the Full Flow
+1. **Run the backend and frontend as usual.**
+2. **Sign up or log in using the Login/Signup pages.**
+3. **Try to add a property:**
+   - Go to the Add Property page (visible only when logged in).
+   - Fill out the form and submit.
+   - If logged in, the property will be added via the backend.
+   - If not logged in, the backend will reject the request.
+
+### Notes
+- You do NOT need to log in separately on the backend.
+- All user session management is handled by Firebase on the frontend.
+- The backend only accepts requests with a valid Firebase ID token.
+
+--- 

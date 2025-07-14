@@ -1,37 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../utils/firebase";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useToast } from "../context/ToastContext";
 import "./Login.css";
-import { onAuthStateChanged } from "firebase/auth";
 import { FaGoogle, FaFacebookF, FaEye, FaEyeSlash } from "react-icons/fa";
+import LoadingSpinner from "../components/LoadingSpinner";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { showSuccess, showError } = useToast();
   const signupSuccess = location.search.includes("signup=success");
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      }
-    });
-    return () => unsubscribe();
-  }, [navigate]);
+    if (signupSuccess) {
+      showSuccess("Account created successfully! Please log in.", 6000);
+    }
+  }, [signupSuccess, showSuccess]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const res = await axios.post("/api/auth/login", { email, password });
+      localStorage.setItem("token", res.data.token);
+      showSuccess("Login successful! Welcome back.");
       navigate("/");
     } catch (err) {
-      setError("Invalid email or password. Please try again.");
+      const errorMessage = err.response?.data?.message || "Invalid email or password. Please try again.";
+      showError(errorMessage);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleSocialLogin = (provider) => {
+    showError(`${provider} login is not implemented yet. Please use email/password.`);
   };
 
   return (
@@ -56,9 +65,6 @@ const Login = () => {
         </div>
         <div className="login-form-modern-wrapper">
           <form className="login-form-modern" onSubmit={handleSubmit}>
-            {signupSuccess && (
-              <div className="login-success-message">Your account is created, please log in now.</div>
-            )}
             <h2 className="login-title-modern">Welcome Back</h2>
             <p className="login-subtitle-modern">Please login to your account</p>
             <div className="login-input-row">
@@ -69,6 +75,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="login-input-modern"
+                disabled={loading}
               />
             </div>
             <div className="login-input-row">
@@ -79,6 +86,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className="login-input-modern"
+                disabled={loading}
               />
               <span className="login-eye-icon" onClick={() => setShowPassword((v) => !v)}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -87,16 +95,38 @@ const Login = () => {
             <div className="login-forgot-row">
               <a href="#" className="login-forgot-link">Forgot password?</a>
             </div>
-            {error && <p className="auth-error">{error}</p>}
-            <button type="submit" className="login-btn-modern">Login</button>
+            <button type="submit" className="login-btn-modern" disabled={loading}>
+              {loading ? (
+                <>
+                  <LoadingSpinner size="small" text="" />
+                  Logging in...
+                </>
+              ) : (
+                "Login"
+              )}
+            </button>
             <div className="login-divider-modern-row">
               <span className="login-divider-modern" />
               <span className="login-or-modern">Or Login with</span>
               <span className="login-divider-modern" />
             </div>
             <div className="login-social-modern-row">
-              <button type="button" className="login-social-modern-btn google"><FaGoogle /> Google</button>
-              <button type="button" className="login-social-modern-btn facebook"><FaFacebookF /> Facebook</button>
+              <button 
+                type="button" 
+                className="login-social-modern-btn google"
+                onClick={() => handleSocialLogin("Google")}
+                disabled={loading}
+              >
+                <FaGoogle /> Google
+              </button>
+              <button 
+                type="button" 
+                className="login-social-modern-btn facebook"
+                onClick={() => handleSocialLogin("Facebook")}
+                disabled={loading}
+              >
+                <FaFacebookF /> Facebook
+              </button>
             </div>
             <p className="login-signup-modern-link">
               Don&apos;t have an account? <a href="/signup">Signup</a>

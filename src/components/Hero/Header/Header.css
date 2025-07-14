@@ -93,6 +93,48 @@
   box-shadow: 0 4px 24px #4066ff55, 0 0 16px #ff922d55;
 }
 
+.profile-dropdown {
+  position: relative;
+}
+.profile-btn {
+  background: #4066ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.profile-btn:hover {
+  background: #2949c6;
+}
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  color: #232323;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 140px;
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+.profile-dropdown:hover .profile-menu {
+  display: block;
+}
+.profile-menu li {
+  list-style: none;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+}
+.profile-menu li:hover {
+  background: #f0f4ff;
+}
+
 @media (max-width: 900px) {
   .header-container {
     padding: 0 1rem;

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
-import { onAuthStateChanged } from "firebase/auth";
 import { FaGoogle, FaFacebookF, FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -12,15 +10,11 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      }
-    });
-    return () => unsubscribe();
+    // No Firebase auth state listener needed here as Firebase is removed
   }, [navigate]);
 
   const handleSubmit = async (e) => {
@@ -30,10 +24,12 @@ const Signup = () => {
       return;
     }
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await axios.post("/api/auth/register", { name, email, password });
       navigate("/login?signup=success");
     } catch (err) {
-      setError("Failed to create account. Please try again.");
+      setError(
+        err.response?.data?.message || "Failed to create account. Please try again."
+      );
     }
   };
 
@@ -61,6 +57,16 @@ const Signup = () => {
           <form className="signup-form-modern" onSubmit={handleSubmit}>
             <h2 className="signup-title-modern">Create an Account</h2>
             <p className="signup-subtitle-modern">Sign up to get started</p>
+            <div className="signup-input-row">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="signup-input-modern"
+              />
+            </div>
             <div className="signup-input-row">
               <input
                 type="email"

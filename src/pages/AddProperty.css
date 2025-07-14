@@ -1,0 +1,233 @@
+.add-property-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f5f8ff 0%, #eaf0fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.add-property-modern-card {
+  display: flex;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(64, 102, 255, 0.08), 0 1.5px 8px rgba(0,0,0,0.04);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 520px;
+}
+.add-property-modern-image-section {
+  flex: 1.1;
+  background: #eaf0fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  min-width: 320px;
+  min-height: 100%;
+}
+.add-property-modern-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 100%;
+  min-width: 320px;
+  max-height: 520px;
+  filter: brightness(0.92) saturate(1.1);
+}
+.add-property-modern-branding {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+.add-property-modern-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2949c6;
+  letter-spacing: 1px;
+  background: #fff8;
+  padding: 0.3rem 1.2rem 0.3rem 0.7rem;
+  border-radius: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.add-property-modern-slogan {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #2949c655;
+  background: #2949c6cc;
+  padding: 0.3rem 1.2rem;
+  border-radius: 0.7rem;
+}
+.add-property-modern-form-section {
+  flex: 1.2;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.add-property-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(64, 102, 255, 0.08), 0 1.5px 8px rgba(0,0,0,0.04);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-property-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2949c6;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.add-property-subheading {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.add-property-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.add-property-input-row {
+  width: 100%;
+}
+
+.add-property-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+.add-property-input:focus {
+  border-color: #4066ff;
+  outline: none;
+  background: #fff;
+}
+
+.add-property-btn {
+  background: #4066ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #4066ff22;
+}
+.add-property-btn:hover {
+  background: #2949c6;
+}
+
+.add-property-hint {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.add-property-image-preview-container {
+  margin-top: 0.5rem;
+}
+.add-property-image-preview-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.add-property-image-preview-grid {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.add-property-image-preview-item {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #4066ff11;
+  background: #f3f6fa;
+}
+.add-property-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.add-property-image-remove-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #ff3b3b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.add-property-image-remove-btn:hover {
+  background: #c62828;
+}
+
+@media (max-width: 900px) {
+  .add-property-modern-card {
+    flex-direction: column;
+    min-height: unset;
+  }
+  .add-property-modern-image-section {
+    min-height: 180px;
+    min-width: 100%;
+    height: 180px;
+  }
+  .add-property-modern-image {
+    min-width: 100%;
+    min-height: 180px;
+    max-height: 180px;
+  }
+  .add-property-modern-form-section {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-property-card {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+} 
