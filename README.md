@@ -117,7 +117,7 @@ Feel free to customize and expand this project as you like!
 ### How it works
 1. **User signs up or logs in via Firebase (UI unchanged).**
 2. **When adding a property (or any protected action):**
-   - The frontend gets the current user’s Firebase ID token.
+   - The frontend gets the current user's Firebase ID token.
    - The token is sent to the backend in the `Authorization` header.
    - The backend verifies the token and allows/denies the request.
 
